@@ -6,7 +6,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     ssh wget unzip vim curl python3
     RUN wget -q https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O /ngrok-stable-linux-amd64.zip\
     && cd / && unzip ngrok-stable-linux-amd64.zip \
-    && chmod +x ngrok && ngrok update
+    && chmod +x ngrok
 
 RUN mkdir /run/sshd \
     && echo "/ngrok tcp --authtoken 2Q2DROOYFDJhacxqHVrGcV5HOdV_5qTSK4xmzbrDxCSQdbo2s --region ap 22 &" >>/openssh.sh \
