@@ -11,7 +11,7 @@ RUN apt update && apt upgrade -y && apt install -y \
 RUN mkdir /run/sshd \
     && echo "/ngrok tcp --authtoken 2Q2DROOYFDJhacxqHVrGcV5HOdV_5qTSK4xmzbrDxCSQdbo2s --region ap 22 &" >>/openssh.sh \
     && echo "sleep 5" >> /openssh.sh \
-    && echo "curl -s http://localhost:4040/api/tunnels | python3 -c \"import sys, json; print(\\\"ssh info:\\\n\\\",\\\"ssh\\\",\\\"root@\\\"+json.load(sys.stdin)['tunnels'][0]['public_url'][6:].replace(':', ' -p '),\\\"\\\nROOT Password:craxid\\\")\" || echo \"\nError：NGROK_TOKEN，Ngrok Token\n\"" >> /openssh.sh \
+    && echo "curl -s http://localhost:4040/api/tunnels | python3 -c \"import sys, json; print(\\\"ssh info:\\\n\\\",\\\"ssh\\\",\\\"root@\\\"+json.load(sys.stdin)['tunnels'][0]['public_url'][6:].replace(':', ' -p '),\\\"\\\nROOT Password:785571\\\")\" || echo \"\nError：NGROK_TOKEN，Ngrok Token\n\"" >> /openssh.sh \
     && echo '/usr/sbin/sshd -D' >>/openssh.sh \
     && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config  \
     && echo root:785571|chpasswd \
